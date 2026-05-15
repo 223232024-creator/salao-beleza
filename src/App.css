@@ -121,6 +121,110 @@ html {
   font-weight: bold;
 }
 
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  background: #fffafa;
+}
+
+.service-icon {
+  font-size: 42px;
+  color: #b85c7a;
+  margin-bottom: 18px;
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease;
+}
+
+.card:hover .service-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: #9f4867;
+}
+
+.whatsapp-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background: #1ebe5d;
+}
+
+.testimonials {
+  background: #fff7f9;
+}
+
+.testimonials .card p {
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonials .card h3 {
+  color: #b85c7a;
+  font-size: 16px;
+}
+
+.testimonials-subtitle {
+  margin-bottom: 40px;
+  color: #777;
+  font-size: 18px;
+}
+
+.about {
+  background: #ffffff;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #665;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 .gallery-section {
   background: #fff;
 }
@@ -131,17 +235,46 @@ html {
   gap: 20px;
 }
 
-.gallery div {
-  height: 220px;
-  border-radius: 16px;
-  background: #f3c7d6;
+.gallery-item {
+  position: relative;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(58, 42, 42, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7a3650;
-  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
+.gallery-overlay h3 {
+  color: white;
+  font-size: 22px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.08);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
 .contact form {
   max-width: 500px;
   margin: auto;
@@ -193,16 +326,54 @@ footer {
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .header nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
   }
 
   .hero h2 {
     font-size: 34px;
+  }
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #b85c7a;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 75px;
+    right: 8%;
+    width: 220px;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 0;
   }
 }
