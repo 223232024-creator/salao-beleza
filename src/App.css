@@ -377,3 +377,123 @@ footer {
     padding: 12px 0;
   }
 }
+
+.schedule {
+  background: #ffffff;
+}
+
+.schedule-subtitle {
+  margin-bottom: 40px;
+  color: #777;
+  font-size: 18px;
+}
+
+.schedule-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.calendar-box,
+.times-box {
+  background: #fff7f9;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.times-box h3 {
+  color: #b85c7a;
+  margin-bottom: 25px;
+}
+
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.time-button {
+  padding: 12px;
+  border: 1px solid #b85c7a;
+  border-radius: 12px;
+  background: white;
+  color: #b85c7a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.time-button:hover {
+  background: #b85c7a;
+  color: white;
+}
+
+.time-button.selected {
+  background: #b85c7a;
+  color: white;
+}
+
+.time-button.booked {
+  background: #ddd;
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.schedule-button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: #b85c7a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.schedule-button:hover {
+  background: #9f4867;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 15px;
+  font-family: inherit;
+}
+
+.react-calendar__tile--active {
+  background: #b85c7a !important;
+  color: white;
+  border-radius: 10px;
+}
+
+.react-calendar__tile--now {
+  background: #f3c7d6 !important;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .schedule-content {
+    grid-template-columns: 1fr;
+  }
+
+  .times-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.schedule-input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}

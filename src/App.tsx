@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Schedule from "./components/Schedule";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Services />
       <Gallery />
       <Testimonials />
+      <Schedule />
       <Contact />
       <Footer />
       <WhatsAppButton />
