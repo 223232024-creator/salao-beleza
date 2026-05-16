@@ -6,10 +6,12 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
+import Agenda from "./components/Agenda";
 import Contact from "./components/Contact";
+import Instagram from "./components/Instagram";
+import Location from "./components/Location";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-import Schedule from "./components/Schedule";
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
       <Services />
       <Gallery />
       <Testimonials />
-      <Schedule />
+      <Agenda />
       <Contact />
+      <Instagram />
+      <Location />
       <Footer />
       <WhatsAppButton />
     </div>
