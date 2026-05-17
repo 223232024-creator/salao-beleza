@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { supabase } from "../lib/supabase";
@@ -14,14 +14,37 @@ const allTimes = [
     "17:00",
 ];
 
-const bookedTimes = ["10:00", "15:00"];
-
 function Agenda() {
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
     const [selectedTime, setSelectedTime] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [service, setService] = useState("");
+    const [bookedTimes, setBookedTimes] = useState<string[]>([]);
+
+    useEffect(() => {
+        async function fetchAppointments() {
+            if (!selectedDate) return;
+
+            const dateFormatted = selectedDate.toISOString().split("T")[0];
+
+            const { data, error } = await supabase
+                .from("appointments")
+                .select("appointment_time")
+                .eq("appointment_date", dateFormatted);
+
+            if (error) {
+                console.error(error);
+                return;
+            }
+
+            const times = data.map((item) => item.appointment_time);
+
+            setBookedTimes(times);
+        }
+
+        fetchAppointments();
+    }, [selectedDate]);
 
     async function handleSchedule() {
         if (!selectedDate || !selectedTime || !name || !phone || !service) {
@@ -57,7 +80,7 @@ function Agenda() {
 📅 Data: ${dateDisplay}
 ⏰ Horário: ${selectedTime}`;
 
-        const whatsappUrl = `https://wa.me/5511918556986?text=${encodeURIComponent(
+        const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
             message
         )}`;
 
