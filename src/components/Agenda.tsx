@@ -71,7 +71,7 @@ function Agenda() {
             return;
         }
 
-        const message = `Olá! Gostaria de agendar um horário.
+        const message = `Olá! agendei um horário com você.
 
 👤 Nome: ${name}
 📞 Telefone: ${phone}

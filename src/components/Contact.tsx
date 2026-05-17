@@ -13,7 +13,7 @@ function Contact() {
             return;
         }
 
-        const text = `Olá! Gostaria de entrar em contato pelo site.
+        const text = `Olá! Gostaria de saber mais sobre os serviços.
 
 👤 Nome: ${name}
 📞 Telefone: ${phone}
