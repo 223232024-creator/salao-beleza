@@ -954,3 +954,27 @@ textarea,
 button {
   max-width: 100%;
 }
+
+.header {
+  z-index: 3000;
+}
+
+.menu-button {
+  position: relative;
+  z-index: 4000;
+}
+
+.nav {
+  z-index: 3500;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    z-index: 5000 !important;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+}
