@@ -955,26 +955,27 @@ button {
   max-width: 100%;
 }
 
-.header {
-  z-index: 3000;
-}
-
-.menu-button {
-  position: relative;
-  z-index: 4000;
-}
-
-.nav {
-  z-index: 3500;
-}
-
 @media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 99999 !important;
+    overflow: visible !important;
+  }
+
   .nav {
-    z-index: 5000 !important;
+    position: fixed !important;
+    top: 95px !important;
+    right: 20px !important;
+    z-index: 999999 !important;
+  }
+
+  .nav.open {
+    display: flex !important;
   }
 
   .hero {
     position: relative;
-    z-index: 1;
+    z-index: 0 !important;
   }
 }
