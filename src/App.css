@@ -590,11 +590,7 @@ footer {
   transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-  .instagram-grid {
-    grid-template-columns: 1fr;
-  }
-}
+ccc
 
 .location {
   background: #ffffff;
