@@ -41,6 +41,7 @@ function Agenda() {
                 appointment_time: selectedTime,
             },
         ]);
+        
         if (error) {
             console.error(error);
             alert(error.message);
