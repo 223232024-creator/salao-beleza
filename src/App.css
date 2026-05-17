@@ -904,3 +904,53 @@ h3 {
     text-align: center;
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section,
+div,
+form,
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+
+/* Correção para iPhone/Safari não vazar para o lado */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root,
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section,
+.header,
+.hero,
+.schedule,
+.contact,
+.schedule-content,
+.contact form {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
