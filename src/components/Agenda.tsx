@@ -99,7 +99,7 @@ function Agenda() {
 📅 Data: ${dateDisplay}
 ⏰ Horário: ${selectedTime}`;
 
-        const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
+        const whatsappUrl = `https://wa.me/5511918556986?text=${encodeURIComponent(
             message
         )}`;
 
