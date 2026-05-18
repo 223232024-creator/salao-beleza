@@ -21,6 +21,7 @@ function Agenda() {
     const [phone, setPhone] = useState("");
     const [service, setService] = useState("");
     const [bookedTimes, setBookedTimes] = useState<string[]>([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function fetchAppointments() {
@@ -51,7 +52,7 @@ function Agenda() {
             alert("Preencha todos os campos e escolha um horário.");
             return;
         }
-
+        setLoading(true);
         const dateFormatted = selectedDate.toISOString().split("T")[0];
         const dateDisplay = selectedDate.toLocaleDateString("pt-BR");
 
@@ -67,18 +68,37 @@ function Agenda() {
         
         if (error) {
             console.error(error);
+
+            setLoading(true);
+
+            if (error.code === "23505") {
+                alert("Esse horário já foi reservado. Escolha outro horário.");
+                return;
+            }
+
+            setLoading(true);
+
             alert(error.message);
             return;
         }
 
-        const message = `Olá! agendei um horário com você.
+        setBookedTimes((prev) => [...prev, selectedTime]);
+        alert("Agendamento realizado com sucesso!");
 
-👤 Nome: ${name}
+        setLoading(false);
+
+        const message = `✨ Novo Agendamento pelo Site ✨
+
+✅ Agendamento confirmado
+
+👤 Cliente: ${name}
 📞 Telefone: ${phone}
 💅 Serviço: ${service}
 
 📅 Data: ${dateDisplay}
-⏰ Horário: ${selectedTime}`;
+⏰ Horário: ${selectedTime}
+
+Mensagem enviada automaticamente pelo site.`;
 
         const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
             message
@@ -135,6 +155,23 @@ function Agenda() {
                         })}
                     </div>
 
+                    <div className="schedule-legend">
+                        <span>
+                            <strong className="legend available"></strong>
+                            Disponível
+                        </span>
+
+                        <span>
+                            <strong className="legend selected"></strong>
+                            Selecionado
+                        </span>
+
+                        <span>
+                            <strong className="legend booked"></strong>
+                            Ocupado
+                        </span>
+                    </div>
+
                     <div className="schedule-form">
                         <input
                             type="text"
@@ -168,8 +205,9 @@ function Agenda() {
                             type="button"
                             className="schedule-button"
                             onClick={handleSchedule}
+                            disabled={loading}
                         >
-                            Solicitar Agendamento
+                            {loading ? "Agendando..." : "Solicitar Agendamento"}
                         </button>
                     </div>
                 </div>

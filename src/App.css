@@ -979,3 +979,39 @@ button {
     z-index: 0 !important;
   }
 }
+
+.schedule-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.schedule-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend.available {
+  background: white;
+  border: 1px solid #b85c7a;
+}
+
+.legend.selected {
+  background: #b85c7a;
+}
+
+.legend.booked {
+  background: #777;
+}
