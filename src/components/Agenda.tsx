@@ -90,16 +90,16 @@ function Agenda() {
 
         setLoading(false);
 
-        const message = `✨ Novo Agendamento pelo Site ✨
+    const message = `✨ Novo Agendamento pelo Site ✨
 
-✅ Agendamento confirmado
+    ✅ Agendamento confirmado
 
 👤 Cliente: ${name}
 📞 Telefone: ${phone}
 💅 Serviço: ${service}
 
 📅 Data: ${dateDisplay}
-⏰ Horário: ${selectedTime};
+⏰ Horário: ${selectedTime}';
 
 Mensagem enviada automaticamente pelo site.`;
 
