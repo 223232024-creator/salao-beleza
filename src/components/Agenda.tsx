@@ -99,7 +99,7 @@ function Agenda() {
 💅 Serviço: ${service}
 
 📅 Data: ${dateDisplay}
-⏰ Horário: ${selectedTime}
+⏰ Horário: ${selectedTime};
 
 Mensagem enviada automaticamente pelo site.`;
 
