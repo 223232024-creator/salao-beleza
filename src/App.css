@@ -1015,3 +1015,22 @@ button {
 .legend.booked {
   background: #777;
 }
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999 !important;
+  }
+
+  body {
+    padding-top: 85px;
+  }
+
+  .menu-button {
+    display: block !important;
+    z-index: 1000000 !important;
+  }
+}
