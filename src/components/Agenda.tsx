@@ -41,6 +41,8 @@ function Agenda() {
 
             const times = data.map((item) => item.appointment_time);
 
+            console.log("Horários ocupados:", times);
+
             setBookedTimes(times);
         }
 
@@ -55,6 +57,7 @@ function Agenda() {
         setLoading(true);
         const dateFormatted = selectedDate.toISOString().split("T")[0];
         const dateDisplay = selectedDate.toLocaleDateString("pt-BR");
+        console.log("Data salva:", dateFormatted);
 
         const { error } = await supabase.from("appointments").insert([
             {
