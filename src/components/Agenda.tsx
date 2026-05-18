@@ -90,18 +90,14 @@ function Agenda() {
 
         setLoading(false);
 
-        const message = `✨ Novo Agendamento pelo Site ✨
+        const message = `Olá! agendei um horário com você.
 
-        ✅ Agendamento confirmado
- 
-       👤 Cliente: ${name}
-       📞 Telefone: ${phone}
-       💅 Serviço: ${service}
+👤 Nome: ${name}
+📞 Telefone: ${phone}
+💅 Serviço: ${service}
 
-       📅 Data: ${dateDisplay}
-       ⏰ Horário: ${selectedTime}
-
-       💎 Mensagem enviada automaticamente pelo site.`;
+📅 Data: ${dateDisplay}
+⏰ Horário: ${selectedTime}`;
 
         const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
             message
