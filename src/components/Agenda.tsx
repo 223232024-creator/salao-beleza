@@ -153,7 +153,24 @@ function Agenda() {
                             );
                         })}
                     </div>
-                    
+
+                    <div className="schedule-legend">
+                        <span>
+                            <strong className="legend available"></strong>
+                            Disponível
+                        </span>
+
+                        <span>
+                            <strong className="legend selected"></strong>
+                            Selecionado
+                        </span>
+
+                        <span>
+                            <strong className="legend booked"></strong>
+                            Ocupado
+                        </span>
+                    </div>
+
                     <div className="schedule-form">
                         <input
                             type="text"
