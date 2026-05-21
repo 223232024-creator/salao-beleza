@@ -1027,3 +1027,23 @@ button {
     z-index: 1000000 !important;
   }
 }
+
+@media (max-width: 480px) {
+
+  .container,
+  .schedule-content,
+  .contact form {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .time-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .hero h1,
+  .section-title {
+    font-size: 32px;
+  }
+}
