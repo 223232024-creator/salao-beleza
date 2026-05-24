@@ -21,7 +21,7 @@ function Contact() {
 📝 Mensagem:
 ${message}`;
 
-        const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
+        const whatsappUrl = `https://wa.me/551198?text=${encodeURIComponent(
             text
         )}`;
 

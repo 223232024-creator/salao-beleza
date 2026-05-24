@@ -14,7 +14,7 @@ function Location() {
                     <h3>Elegance Beauty</h3>
 
                     <p>
-                        <FaMapMarkerAlt /> Rua Exemplo, 123 - Centro
+                        <FaMapMarkerAlt /> Rua Valdemar, n° 40 - Penha 
                     </p>
 
                     <p>São Paulo - SP</p>

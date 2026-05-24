@@ -92,14 +92,13 @@ function Agenda() {
 
         const message = `Olá! agendei um horário com você.
 
-👤 Nome: ${name}
-📞 Telefone: ${phone}
-💅 Serviço: ${service}
+    Nome: ${name}
+    Telefone: ${phone}
+     Serviço: ${service}
 
-📅 Data: ${dateDisplay}
-⏰ Horário: ${selectedTime}`;
-
-        const whatsappUrl = `https://wa.me/5511918556986?text=${encodeURIComponent(
+    Data: ${dateDisplay}
+     Horário: ${selectedTime}`;
+        const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
             message
         )}`;
 
@@ -152,7 +151,7 @@ function Agenda() {
                                 </button>
                             );
                         })}
-                    </div>
+                    </div> 
 
                     <div className="schedule-legend">
                         <span>
