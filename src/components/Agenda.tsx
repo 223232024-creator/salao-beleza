@@ -31,7 +31,7 @@ function Agenda() {
 
             const { data, error } = await supabase
                 .from("appointments")
-                .select("appointment_time")
+                .select('appointment_time')
                 .eq("appointment_date", dateFormatted);
 
             if (error) {
@@ -39,7 +39,7 @@ function Agenda() {
                 return;
             }
 
-            const times = data.map((item) => item.appointment_time);
+            const times = (data as any[])?.map((item) => item["appointment_time"]) || [];
 
             console.log("Horários ocupados:", times);
 
@@ -61,25 +61,23 @@ function Agenda() {
 
         const { error } = await supabase.from("appointments").insert([
             {
-                name,
-                phone,
-                service,
+                name: name,
+                phone: phone,
+                service: service,
                 appointment_date: dateFormatted,
                 appointment_time: selectedTime,
+                status: "confirmado",
             },
         ]);
-        
+
         if (error) {
             console.error(error);
-
-            setLoading(true);
+            setLoading(false);
 
             if (error.code === "23505") {
                 alert("Esse horário já foi reservado. Escolha outro horário.");
                 return;
             }
-
-            setLoading(true);
 
             alert(error.message);
             return;
@@ -87,24 +85,24 @@ function Agenda() {
 
         setBookedTimes((prev) => [...prev, selectedTime]);
         alert("Agendamento realizado com sucesso!");
-
         setLoading(false);
 
-        const message = `Olá! agendei um horário com você.
+        const message = `Olá! meu agendamento foi confirmado pelo site.
 
-    Nome: ${name}
-    Telefone: ${phone}
-     Serviço: ${service}
+Nome: ${name}
+Telefone: ${phone}
+Serviço: ${service}
 
-    Data: ${dateDisplay}
-     Horário: ${selectedTime}`;
-        const whatsappUrl = `https://wa.me/5511982138403?text=${encodeURIComponent(
-            message
-        )}`;
+Data: ${dateDisplay}
+Horário: ${selectedTime}
 
-        window.open(whatsappUrl, "_blank");
+Status: confirmado.`;
+        const whatsappUrl = `https://wa.me/5511918556986?text=${encodeURIComponent(message)}`;
+
+        console.log("Link WhatsApp agenda:", whatsappUrl);
+
+        window.location.href = whatsappUrl;
     }
-
     return (
         <section id="agenda" className="section schedule">
             <h2>Agende seu Horário</h2>

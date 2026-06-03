@@ -953,7 +953,30 @@ button {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 99999 !important;
+    overflow: visible !important;
+  }
 
+  .nav {
+    position: fixed !important;
+    top: 95px !important;
+    right: 20px !important;
+    z-index: 999999 !important;
+  }
+
+  .nav.open {
+    display: flex !important;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 0 !important;
+  }
+}
 
 .schedule-legend {
   display: flex;
@@ -984,18 +1007,13 @@ button {
   background: #777;
 }
 
-/* =========================
-   TABLET / MOBILE
-========================= */
 @media (max-width: 768px) {
-
   .header {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
-    padding: 14px 20px;
+    z-index: 999999 !important;
   }
 
   body {
@@ -1003,88 +1021,27 @@ button {
   }
 
   .menu-button {
-    display: block;
-    z-index: 10000;
-  }
-
-  .nav {
-    position: fixed;
-    top: 90px;
-    right: 20px;
-    width: 260px;
-    background: #1b1b1b;
-    flex-direction: column;
-    gap: 0;
-    padding: 25px;
-    border-radius: 22px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-    display: none;
-    z-index: 9999;
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .nav a {
-    padding: 16px 0;
-    text-align: center;
-    color: white;
-  }
-
-  .schedule-content,
-  .location-content,
-  .instagram-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .times-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .container,
-  .contact form {
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  .hero h1 {
-    font-size: 40px;
+    display: block !important;
+    z-index: 1000000 !important;
   }
 }
 
-/* =========================
-   CELULAR PEQUENO
-========================= */
 @media (max-width: 480px) {
 
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .section h2 {
-    font-size: 28px;
+  .container,
+  .schedule-content,
+  .contact form {
+    width: 100%;
+    padding: 0 12px;
   }
 
   .time-button {
     font-size: 14px;
-    padding: 10px;
-  }
-
-  .schedule-button,
-  .contact button {
-    font-size: 15px;
     padding: 12px;
   }
 
-  .calendar-box,
-  .times-box {
-    padding: 20px;
-  }
-
-  .nav {
-    width: 220px;
-    right: 10px;
+  .hero h1,
+  .section-title {
+    font-size: 32px;
   }
 }
-
